@@ -1,0 +1,197 @@
+.pricing-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    text-align: center;
+    justify-content: top;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+.pricing-title{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 50px;
+    gap: 1rem;
+}
+
+.pricing-title h1 {
+    margin: 0;
+}
+
+.pricing-title span{
+    background: linear-gradient(to right, #d69e2e, #535bf2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pricing-title h3 {
+    color: grey;
+    font-weight: 500;
+    margin: 0;
+}
+
+.tab-container{
+    display: flex;
+    align-self: center;
+    gap: 2rem;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    background-color: #1a202c; 
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    color: grey;
+    
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.39);
+}
+
+
+.tab h2 span{
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+}
+
+.tab-title {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.tab-title h2, h3{
+    margin: 0;
+    color: white;
+    font-weight: 500;
+}
+
+.tab-title h3 {
+    color: gray;
+    font-weight: 500;
+}
+
+.tab-pro {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #1a202c;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    color: grey;
+    align-items: center;
+
+    border: 3px solid #535bf2;
+}
+
+.tab-pro h2 span{
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+}
+
+.tab-title h2{
+    margin: 0;
+    color: white;
+    font-weight: 500;
+}
+
+.tab-title h3 {
+    font-size: 1rem;
+}
+
+.badge {
+    position: absolute;
+    top: 17.5%;
+    left: 50.5%;
+    transform: translateX(-50%);
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    background: linear-gradient(to right, #d69e2e, #535bf2);
+    color: white;
+
+    border-radius: 999px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.pro-btn {
+    width: 20rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    background: linear-gradient(to right, #d69e2e, #535bf2);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.norm-btn {
+    width: 20rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+
+    background: white;
+    color: black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.tab-list {
+    text-align: left;
+    list-style-type: none;
+    color: #DEDEDE;
+    line-height: 2.5rem;
+}
+
+
+.tab-list li span {
+    color: #d69e2e;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.faq-tab {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 70%;
+    background-color: #1a202c;
+    border-radius: 10px;
+    gap: 1rem;
+    padding: 1.25% 1.25% 1.25% 1.25%;
+}
+
+.question {
+    font-size: 1.5rem;
+    color: white;
+    text-align: left;
+    margin: 0;
+}
+
+.answer {
+    font-size: 1rem;
+    color: grey;
+    text-align: left;
+    margin: 0;
+}
