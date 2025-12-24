@@ -12,7 +12,7 @@ export const plans = [
                 : '',
         priceId:
             process.env.NODE_ENV === 'development'
-                ? 'price_1ScJXOCF4vw8W4pqCXSTIPbX'
+                ? 'price_1ShsQMFlH7SBQc2IrVcxZEpi'
                 : '',
         price: 12,
         duration: '/month'
@@ -24,7 +24,7 @@ export const plans = [
                 : '',
         priceId:
             process.env.NODE_ENV === 'development'
-                ? 'price_1ScJeGCF4vw8W4pqigUeXWaE'
+                ? 'price_1ShsQMFlH7SBQc2IqYwFbHns'
                 : '',
         price: 29,
         duration: '/month'
@@ -34,13 +34,14 @@ export const plans = [
 
 const Pricing = () => {
     const {session} = UserAuth();
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
     const navigate = useNavigate();
     const handleRedirect = () => {
         navigate('/roadmap');
     }
 
     const startCheckout = async (priceId) => {
-        const res = await fetch("http://127.0.0.1:5000/api/create-checkout-session", {
+        const res = await fetch(`${API_BASE}/api/create-checkout-session`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

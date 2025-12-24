@@ -409,8 +409,8 @@ def create_checkout():
             "price": request.json["priceId"],
             "quantity": 1
         }],
-        success_url="http://localhost:5173/pricing",
-        cancel_url="http://localhost:5173/pricing"
+        success_url="https://pathfinder-psi-three.vercel.app/pricing",
+        cancel_url="https://pathfinder-psi-three.vercel.app/pricing"
     )
 
     return jsonify({"url": checkout.url})
