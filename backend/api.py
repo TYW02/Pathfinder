@@ -15,7 +15,13 @@ from datetime import datetime, timezone
 from PIL import Image
 
 app = Flask(__name__)
-CORS(app, origins=["https://pathfinder-psi-three.vercel.app"], supports_credentials=True)
+CORS(app, 
+     resources={r"/api/*": {
+        "origins": [
+           "https://pathfinder-psi-three.vercel.app"
+        ]
+     }},
+    supports_credentials=True)
 stripe.api_key = os.getenv("STRIPE_NON_PUB_KEY")
 supabase = create_client(
    os.getenv("SUPABASE_URL"),
