@@ -399,7 +399,7 @@ def download_image():
 def create_checkout():
     user = get_user_id_from_jwt(request)
 
-    data = request.get_json(force=True)
+    data = request.get_json()
     price_id = data.get("priceId")
 
     if not price_id:

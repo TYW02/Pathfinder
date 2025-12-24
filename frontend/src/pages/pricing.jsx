@@ -45,7 +45,7 @@ const Pricing = () => {
             "Authorization": `Bearer ${session.access_token}`
             },
             body: JSON.stringify({
-            priceId
+            priceId: priceId
             })
         })
 
