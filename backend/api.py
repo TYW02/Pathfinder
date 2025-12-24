@@ -399,6 +399,15 @@ def download_image():
 def create_checkout():
     user = get_user_id_from_jwt(request)
 
+    data = request.get_json(force=True)
+    price_id = data.get("priceId")
+
+    if not price_id:
+       return jsonify({
+          "error": "Missing priceId",
+          "received": data
+       }), 400
+
     checkout = stripe.checkout.Session.create(
         mode="subscription",
         customer_email=user["email"],
@@ -406,7 +415,7 @@ def create_checkout():
             "user_id": user["id"]  # THIS IS CRITICAL
         },
         line_items=[{
-            "price": request.json["priceId"],
+            "price": price_id,
             "quantity": 1
         }],
         success_url="https://pathfinder-psi-three.vercel.app/pricing",
