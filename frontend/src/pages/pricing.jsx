@@ -3,8 +3,14 @@ import { UserAuth } from "../context/AuthContext";
 import NavBar from "../components/navbar";
 import { useNavigate } from 'react-router-dom';
 
-
-export const plans = [
+const Pricing = () => {
+    const {session} = UserAuth();
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+    const navigate = useNavigate();
+    const handleRedirect = () => {
+        navigate('/roadmap');
+    }
+    const plans = [
     {
         link:
             process.env.NODE_ENV === 'development'
@@ -30,15 +36,6 @@ export const plans = [
         duration: '/month'
     }
 ]
-
-
-const Pricing = () => {
-    const {session} = UserAuth();
-    const API_BASE = import.meta.env.VITE_API_BASE_URL;
-    const navigate = useNavigate();
-    const handleRedirect = () => {
-        navigate('/roadmap');
-    }
 
     const startCheckout = async (priceId) => {
         const res = await fetch(`${API_BASE}/api/create-checkout-session`, {
