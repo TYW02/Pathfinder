@@ -18,6 +18,7 @@ function RoadMap() {
   const [feature_map, setFeatureMap] = useState([]);
   const [userJourney, setUserJourney] = useState([]);
   const { session } = UserAuth()
+  const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
   function showLimitModal(plan) {
     alert(
@@ -35,7 +36,7 @@ function RoadMap() {
     const user_prompt = formData.get('user-prompt')
 
     try{
-          const response = await fetch('http://127.0.0.1:5000/api/roadmap', {
+          const response = await fetch(`${API_BASE}/api/roadmap`, {
             method: 'POST',
             headers: {
               "Authorization": `Bearer ${session.access_token}`,
@@ -77,7 +78,7 @@ function RoadMap() {
   const handleDownload = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch('http://127.0.0.1:5000/api/download-roadmap')
+      const response = await fetch(`${API_BASE}/api/download-roadmap`)
 
       if(!response.ok){
         throw new Error(`Http error! status ${response.error}`)
@@ -107,7 +108,7 @@ function RoadMap() {
   const handleDownloadImage = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch('http://127.0.0.1:5000/api/download-image')
+      const response = await fetch(`${API_BASE}/api/download-image`)
 
       if(!response.ok){
         throw new Error(`Http error! status ${response.error}`)
