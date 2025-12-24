@@ -52,8 +52,21 @@ const Pricing = () => {
             })
         })
 
-        const { url } = await res.json()
-        window.location.href = url
+        if(!res.ok){
+            const text = await res.text()
+            console.error("Checkout error:", text)
+            alert("Checkout failed")
+            return
+        }
+
+        const data = await res.json()
+
+        if (!data.url) {
+            alert("Stripe URL missing")
+            return
+        }
+
+        window.location.href = data.url
     }
 
     return (
