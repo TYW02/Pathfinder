@@ -38,6 +38,7 @@ const Pricing = () => {
 ]
 
     const startCheckout = async (priceId) => {
+        console.log("startcheckout received: ", priceId)
         const res = await fetch(`${API_BASE}/api/create-checkout-session`, {
             method: "POST",
             headers: {
@@ -106,7 +107,8 @@ const Pricing = () => {
                         
                         {/*INSERT Pricing details */}
                         <h2><span>$12</span> /month</h2>
-                        <button onClick={() => startCheckout(plans[0].priceId)}className='pro-btn'>Get Started</button>
+                        <button onClick={() => {console.log("clicked priceid: ", plans[0].priceId) 
+                            startCheckout(plans[0].priceId)}}className='pro-btn'>Get Started</button>
                         <ul className='tab-list'>
                             <li><span>&#10003;</span> Generate up to 30 AI roadmaps / month</li>
                             <li><span>&#10003;</span> Includes both User Flow + Component Graphs</li>
