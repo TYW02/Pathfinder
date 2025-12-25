@@ -16,10 +16,7 @@ const Pricing = () => {
             process.env.NODE_ENV === 'development'
                 ? 'https://buy.stripe.com/8x29ATa231fU2uV82O0x201'
                 : '',
-        priceId:
-            process.env.NODE_ENV === 'development'
-                ? 'price_1ShsQMFlH7SBQc2IrVcxZEpi'
-                : '',
+        priceId: 'price_1ShsQMFlH7SBQc2IrVcxZEpi',
         price: 12,
         duration: '/month'
     },
@@ -28,10 +25,7 @@ const Pricing = () => {
             process.env.NODE_ENV === 'development'
                 ? 'https://buy.stripe.com/bJe6oHa232jY2uV3My0x200'
                 : '',
-        priceId:
-            process.env.NODE_ENV === 'development'
-                ? 'price_1ShsQMFlH7SBQc2IqYwFbHns'
-                : '',
+        priceId: 'price_1ShsQMFlH7SBQc2IqYwFbHns',
         price: 29,
         duration: '/month'
     }
